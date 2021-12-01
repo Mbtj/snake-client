@@ -10,11 +10,11 @@ const connect = function () {
   //data from server "data event"
   conn.on('data', (data) => {
     console.log(data);
-  })
+  });
 
   // on connect event
   conn.on("connect", () => {
-    conn.write("Name: KFF "); //send name on connect 
+    conn.write("Name: WHY "); //send name on connect 
     console.log('You\'re connected');
   });
 
