@@ -7,13 +7,20 @@ const connect = function () {
     port: 50541// PORT number here,
   });
 
-  // interpret incoming data as text
-  conn.setEncoding("utf8");
+  //data from server "data event"
+  conn.on('data', (data) => {
+    console.log(data);
+  })
 
+  // on connect event
   conn.on("connect", () => {
-    // code that does something when the connection is first established
+    conn.write("Name: KFF "); //send name on connect 
     console.log('You\'re connected');
   });
+
+
+  // interpret incoming data as text
+  conn.setEncoding("utf8");
 
 
   return conn;
